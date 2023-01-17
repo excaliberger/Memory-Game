@@ -10,32 +10,32 @@ class Board extends Component {
         return <div id="gameBoard">
                     <div className="cardContainer">
                         <Cards />
+                        {/* <Cards />
                         <Cards />
                         <Cards />
-                        <Cards />
-                        <Cards />
+                        <Cards /> */}
                     </div>
-                    <div className="cardContainer">
+                    {/* <div className="cardContainer">
                         <Cards />
                         <Cards />
                         <Cards />
                         <Cards />
                         <Cards />
-                    </div>
-                    <div className="cardContainer">
+                    </div> */}
+                    {/* <div className="cardContainer">
                         <Cards />
                         <Cards />
                         <Cards />
                         <Cards />
                         <Cards />
-                    </div>
-                    <div className="cardContainer">
+                    </div> */}
+                    {/* <div className="cardContainer">
                         <Cards />
                         <Cards />
                         <Cards />
                         <Cards />
                         <Cards />
-                    </div>
+                    </div> */}
                </div>
     }
 
