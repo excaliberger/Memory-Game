@@ -6,20 +6,23 @@ class Cards extends Component {
 
         this.state = {
             className: "cards",
+            id: `cardDiv${this.props.index}`
         };
     }
 
     render() {
-        console.log(this.cardOnClick);
-        return (<div onClick={this.cardOnClick} id="cardDiv" className={this.state.className}>
-            <input type="checkbox" id="flippableCheckBox" />
-            <label class="btn" htmlFor="flippableCheckBox"></label>
+        return (<div id={this.state.id} onClick={() => {this.cardFlipOnClick()}} className={this.state.className}>
         </div>);
     }
 
-    cardOnClick() {
+    cardFlipOnClick() {
         console.log(this);
-        cardDiv.flippableCheckBox.checked = this.setState({ className: "cards:checked"})
+        let card = document.getElementById(this.state.id);
+        if (card.className === "cards") { 
+            this.setState({className: "cards-flipped"});
+        } else if (card.className === "cards-flipped") {
+            this.setState({className: "cards"});
+        };
     };
 }
 
