@@ -20,8 +20,11 @@ class Cards extends Component {
         let card = document.getElementById(this.state.id);
         if (card.className === "cards") { 
             this.setState({className: "cards-flipped"});
+            card.textContent = `${card.id}`
         } else if (card.className === "cards-flipped") {
             this.setState({className: "cards"});
+            card.textContent = '';
+
         };
     };
 }

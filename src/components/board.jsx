@@ -11,10 +11,10 @@ class Board extends Component {
         let cardRows = cardArr.map((i, index) => {
             return <><div className="cardContainer">
             <Cards index={index}/>
-            <Cards index={index+5}/>
-            <Cards index={index+10}/>
-            <Cards index={index+15}/>
-            <Cards index={index+20}/>
+            <Cards index={index+4}/>
+            <Cards index={index+8}/>
+            <Cards index={index+12}/>
+            <Cards index={index+16}/>
             </div>
             </>          
         });
