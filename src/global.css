@@ -27,7 +27,8 @@
 }
 
 .cards {
-    background-image: url("./images/1283.jpg");
+    /* background-image: url("./images/1283.jpg"); */
+    background-color: chartreuse;
     background-size: 100px 100px;
     width: 100px;
     height: 100px;
@@ -42,3 +43,34 @@
     margin: 20px;
 }
 
+.cards-flipped.ID1 {
+    background-image: url("./images/A.png");
+}
+
+.cards-flipped.ID2 { 
+    background-image: url("./images/B.png");
+}
+
+.cards-flipped.ID3 { 
+    background-image: url("./images/C.png");
+}
+
+.cards-flipped.ID4 { 
+    background-image: url("./images/D.png");
+}
+
+.cards-flipped.ID5 { 
+    background-image: url("./images/E.png");
+}
+
+.cards-flipped.ID6 { 
+    background-image: url("./images/F.png");
+}
+
+.cards-flipped.ID7 { 
+    background-image: url("./images/G.png");
+}
+
+.cards-flipped.ID8 { 
+    background-image: url("./images/H.png");
+}
