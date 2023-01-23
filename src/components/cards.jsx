@@ -21,7 +21,8 @@ class Cards extends Component {
         return (<div 
             id={this.state.id} 
             onClick={() => {this.cardFlipOnClick()}} 
-            className={"cards" + " " + this.state.matchId}
+            className={"cards" + " " + this.state.matchId + "selectAllCards"}
+            data-matchid = {this.state.matchId}
             > {this.state.matchId}
         </div>);
     }
@@ -30,20 +31,12 @@ class Cards extends Component {
     cardFlipOnClick() {
         // console.log(this);
         let card = document.getElementById(this.state.id);
-        // console.log("here", card.className, this.state.className)
-        // if (card.className !== this.state.className) {
-        //     this.state.className = `${card.className}`
-        //     console.log(this.state.className, card.className)
-        // } 
         if (!card.className.includes("flipped")) { 
             this.setState({className: "cards-flipped"});
-            card.className = "cards-flipped" +" "+ this.state.matchId
+            card.className = "cards-flipped" +" "+ this.state.matchId + " " + "selectAllCards"
             card.textContent = `${this.state.matchId}`;
             this.props.foundMatch(this.state.matchId, this.state.id);
         } else {
-            // this.setState({className: "cards"});
-            // this.props.foundMatch(this.state.matchId, this.state.id);
-            // card.textContent = '';
         };
     }
 }

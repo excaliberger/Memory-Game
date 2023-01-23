@@ -9,11 +9,11 @@ class HeaderBox extends Component {
         return <div id="headerBox">
                 <div className="scores">
                     <p>Current Score</p>
-                    <h2 id='currentScore'>15</h2>
+                    <h2 id='currentScore'>{this.props.currentScore}</h2>
                 </div>
                 <div className="scores">
-                    <p id='bestScore'>Best Score</p>
-                    <h2>25</h2>
+                    <p>Best Score</p>
+                    <h2 id='bestScore'>{this.props.bestScore}</h2>
                 </div>
             </div>
     }

@@ -8,7 +8,6 @@ import Cards from './components/cards.jsx'
 function App() {
   return (
     <div className="App">
-      <HeaderBox />
       <Board />
     </div>
   );
