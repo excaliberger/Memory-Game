@@ -4,41 +4,34 @@ class Cards extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            // className: "cards",
-            matchId: `${this.props.matchId}`,
-            id: `${this.props.index}`,
-            lastCard: "",
-            remainingMismatches: []
-        };
     }
 
-    chancesRemaining() {
-        //how to calculate mismatches made
-    }
+    componentDidUpdate() {
 
-    render() {
-        return (<div 
-            id={this.state.id} 
-            onClick={() => {this.cardFlipOnClick()}} 
-            className={"cards" + " " + this.state.matchId + "selectAllCards"}
-            data-matchid = {this.state.matchId}
-            > {this.state.matchId}
-        </div>);
     }
-
 
     cardFlipOnClick() {
         // console.log(this);
-        let card = document.getElementById(this.state.id);
+        let card = document.getElementById(this.props.index);
         if (!card.className.includes("flipped")) { 
             this.setState({className: "cards-flipped"});
-            card.className = "cards-flipped" +" "+ this.state.matchId + " " + "selectAllCards"
-            card.textContent = `${this.state.matchId}`;
-            this.props.foundMatch(this.state.matchId, this.state.id);
+            card.className = "cards-flipped" + " " + this.props.matchId + " " + "selectAllCards"
+            // card.textContent = `${this.props.matchId}`;
+            this.props.foundMatch(this.props.matchId, this.props.index);
         } else {
         };
     }
+
+    render() {
+        return (<div
+            id={this.props.index} 
+            onClick={() => {this.cardFlipOnClick()}} 
+            className={"cards" + " " + this.props.matchId + " " + "selectAllCards"}
+            data-matchid = {this.props.matchId}>
+                {this.props.matchId}
+        </div>);
+    }
+
 }
 
 export default Cards;

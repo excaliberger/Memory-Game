@@ -16,9 +16,10 @@ class Board extends Component {
             losses: 0,
             bestScore: 0,
             shuffledBoard: this.shuffle(),
-        }
+       }
     }
     
+
     shuffle() {
         let idArr = ["ID1","ID1", "ID2", "ID2", "ID3", "ID3", "ID4", "ID4",
         "ID5", "ID5", "ID6", "ID6", "ID7", "ID7", "ID8", "ID8"];
@@ -35,8 +36,6 @@ class Board extends Component {
         for (let i = 0; i < 16; i++) {
           shuffledCards.push(idArr[tempCards[i]]);
         }
-        
-        console.log("og",shuffledCards);
         return shuffledCards;
     };
 
@@ -48,15 +47,16 @@ class Board extends Component {
             this.state.lastCard = id;
             this.state.lastUniqueId = uniqueId;
             if (this.state.firstCard === this.state.lastCard) {
+                console.log("if")
+                console.log("before", this.state.score)
                 this.state.score++;
-                console.log("score", this.state.score);
-                console.log(this.state.firstCard, this.state.lastCard);
+                console.log("after", this.state.score)
                 this.state.firstCard = "";
                 this.state.lastCard = "";
-                if (this.state.score === 0) {
-                    this.state.score++;
-                }
+                this.state.firstUniqueId = "";
+                this.state.lastUniqueId = "";
             } else {
+                console.log("else")
                 let firstCard = document.getElementById(this.state.firstUniqueId)
                 let secondCard = document.getElementById(this.state.lastUniqueId)
                 function cardAutoFlip(card1, card2) {
@@ -67,32 +67,35 @@ class Board extends Component {
                 }
                 setTimeout(cardAutoFlip, 1500);
                 this.state.losses++;
-                console.log("losses",this.state.losses)
                 this.state.firstCard = "";
                 this.state.lastCard = "";
+                this.state.firstUniqueId = "";
+                this.state.lastUniqueId = "";
             }
         }
-            if (this.state.score > this.state.bestScore) {
-                // this.bestScore.setState = ({bestScore: `${this.state.score}`})
-                this.setState({ bestScore: this.state.score })
-            } 
-            if (this.state.score == 8 || this.state.losses == 3) {
-                console.log("win/loss")
-                let allCards = document.getElementsByClassName('selectAllCards');
-                console.log(allCards);
-                let arrayFromCards = Array.from(allCards);
-                arrayFromCards.forEach((card) => {
-                    console.log(card);    
-                    card.className = `cards ${card.dataset.matchid} selectAllCards`
-                });
-                console.log("before", this.state.shuffledBoard)
-                const shuffleTest = this.shuffle()
-                console.log("shuffleTest", shuffleTest)
-                this.setState({shuffledBoard: shuffleTest, firstCard: "", lastCard: "", score: 0}, () => {
-                    console.log("after", this.state.shuffledBoard);
-                }) 
-                Cards.className = `cards ${shuffleTest} selectAllCards`  
-            }
+        if (this.state.score > this.state.bestScore) {
+            this.setState({ bestScore: this.state.score })
+        } else {
+            this.setState({})
+        }
+        if (this.state.score == 8 || this.state.losses == 3) {
+            let allCards = document.getElementsByClassName('selectAllCards');
+            let arrayFromCards = Array.from(allCards);
+            arrayFromCards.forEach((card) => {
+                card.className = `cards ${card.dataset.matchid} selectAllCards`
+            });
+            this.setState(() => {
+                return {
+                    shuffledBoard: this.shuffle(), 
+                    score: 0,
+                    losses: 0,
+                    firstUniqueId: "",
+                    lastUniqueId: "",
+                    firstCard: "",
+                    lastCard: "",
+                }
+            }); 
+        }
     }
 
     render () {
@@ -102,7 +105,6 @@ class Board extends Component {
         let z = 8;
         let q = 12;
         
-        console.log("render", this.state.shuffledBoard)
         let cardRows = cardArr.map((i, index) => {
             return <div className="cardContainer" key={`rowKey${index}`}>
             <Cards index={index} matchId={`${this.state.shuffledBoard[x++]}`} foundMatch= {(id, uniqueId) => {this.foundMatch(id, uniqueId)}}/>
@@ -111,7 +113,7 @@ class Board extends Component {
             <Cards index={index+12} matchId={`${this.state.shuffledBoard[q++]}`} foundMatch={(id, uniqueId) => {this.foundMatch(id, uniqueId)}}/>
             </div>      
         });
-        // console.log(cardArr);
+        console.log("finalScore", this.state.score);
         return <>
             <div>
                 <HeaderBox currentScore={this.state.score} bestScore={this.state.bestScore}/>

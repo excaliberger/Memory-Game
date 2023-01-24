@@ -40,36 +40,89 @@
     width: 100px;
     height: 100px;
     margin: 20px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID1 {
     background-image: url("./images/A.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID2 { 
     background-image: url("./images/B.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID3 { 
     background-image: url("./images/C.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID4 { 
     background-image: url("./images/D.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID5 { 
     background-image: url("./images/E.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID6 { 
     background-image: url("./images/F.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID7 { 
     background-image: url("./images/G.png");
+    transform: rotateY(180deg);
 }
 
 .cards-flipped.ID8 { 
     background-image: url("./images/H.png");
+    transform: rotateY(180deg);
+} 
+
+
+
+/* .flipped {
+    background-color: pink;
+    background-size: 100px 100px;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
 }
+
+.flipped.ID1 {
+    background-image: url("./images/A.png");
+}
+
+.flipped.ID2 { 
+    background-image: url("./images/B.png");
+}
+
+.flipped.ID3 { 
+    background-image: url("./images/C.png");
+}
+
+.flipped.ID4 { 
+    background-image: url("./images/D.png");
+}
+
+.flipped.ID5 { 
+    background-image: url("./images/E.png");
+}
+
+.flipped.ID6 { 
+    background-image: url("./images/F.png");
+}
+
+.flipped.ID7 { 
+    background-image: url("./images/G.png");
+}
+
+.flipped.ID8 { 
+    background-image: url("./images/H.png");
+}*/

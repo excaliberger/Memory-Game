@@ -6,6 +6,7 @@ class HeaderBox extends Component {
     }
 
     render() {
+        console.log("render", this.props.currentScore, this.props.bestScore)
         return <div id="headerBox">
                 <div className="scores">
                     <p>Current Score</p>
