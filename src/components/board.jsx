@@ -32,7 +32,6 @@ class Board extends Component {
             tempCards.push(a);
           }
         }
-        // console.log(tempCards);
         for (let i = 0; i < 16; i++) {
           shuffledCards.push(idArr[tempCards[i]]);
         }
