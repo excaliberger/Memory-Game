@@ -8,7 +8,7 @@
 } 
 
 #gameBoard {
-    background-color: #2c2c2c;
+    background-color: #1a1919;
     /* height: 550px; */
     width: 100%;
     display: flex;
@@ -38,6 +38,7 @@
     width: 100px;
     height: 100px;
     margin: 20px;
+    border-radius: 50px;
     transition: transform 0.8s;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
@@ -49,6 +50,7 @@
     width: 100px;
     height: 100px;
     margin: 20px;
+    border-radius: 50px;
     transition: transform 0.8s;
     transform-style: preserve-3d;
     transform: rotateY(180deg); 
@@ -58,6 +60,7 @@
     position: absolute;
     width: 100px;
     height: 100px;
+    border-radius: 10px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
