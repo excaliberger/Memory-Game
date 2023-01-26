@@ -46,10 +46,15 @@ class Board extends Component {
             this.state.lastCard = id;
             this.state.lastUniqueId = uniqueId;
             if (this.state.firstCard === this.state.lastCard) {
-                console.log("if")
-                console.log("before", this.state.score)
+                // this.setState({ 
+                //     score: this.state.score + 1,
+                //     firstCard: "",
+                //     lastCard: "",
+                //     firstUniqueId: "",
+                //     lastUniqueId: "",
+                // })
+            
                 this.state.score++;
-                console.log("after", this.state.score)
                 this.state.firstCard = "";
                 this.state.lastCard = "";
                 this.state.firstUniqueId = "";
@@ -65,11 +70,14 @@ class Board extends Component {
                     card2.className = `cards ${Cards.matchId} selectAllCards`;
                 }
                 setTimeout(cardAutoFlip, 1500);
-                this.state.losses++;
-                this.state.firstCard = "";
-                this.state.lastCard = "";
-                this.state.firstUniqueId = "";
-                this.state.lastUniqueId = "";
+                this.setState({ 
+                    losses: this.state.losses + 1,
+                    firstCard: "",
+                    lastCard: "",
+                    firstUniqueId: "",
+                    lastUniqueId: "",
+                })
+               
             }
         }
         if (this.state.score > this.state.bestScore) {
@@ -77,7 +85,7 @@ class Board extends Component {
         } else {
             this.setState({})
         }
-        if (this.state.score == 8 || this.state.losses == 3) {
+        if (this.state.score === 8 || this.state.losses === 5) {
             let allCards = document.getElementsByClassName('selectAllCards');
             let arrayFromCards = Array.from(allCards);
             arrayFromCards.forEach((card) => {

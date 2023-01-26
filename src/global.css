@@ -8,7 +8,7 @@
 } 
 
 #gameBoard {
-    background-color: steelblue;
+    background-color: #2c2c2c;
     /* height: 550px; */
     width: 100%;
     display: flex;
@@ -18,7 +18,7 @@
 }
 
 #headerBox {
-    background-color: brown;
+    background-color: darkred;
     width: 100%;
     display: flex;
     align-items: center;
@@ -35,72 +35,74 @@
 }
 
 .cards {
-    /* background-image: url("./images/1283.jpg"); */
-    background-color: chartreuse;
-    background-size: 100px 100px;
     width: 100px;
     height: 100px;
     margin: 20px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
 }
 
 .cards-flipped {
-    background-color: pink;
+    background-color: whitesmoke;
     background-size: 100px 100px;
     width: 100px;
     height: 100px;
     margin: 20px;
-    /*
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    */
-
-    animation-name: flipCardAnimation;
-    animation-duration: 1.5s;
-
-
+    transform: rotateY(180deg); 
 }
 
-.cards-flipped.ID1 {
-    background-image: url("./images/A.png");
-    /*
-    transform: rotateY(180deg);
-    */
+.card-back, .card-front {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-.cards-flipped.ID2 { 
-    background-image: url("./images/B.png");
-    transform: rotateY(180deg);
+.card-front {
+     background-image: url("./images/1283.jpg");
+     /* background-color: chartreuse; */
+     background-size: 100px 100px;
 }
 
-.cards-flipped.ID3 { 
-    background-image: url("./images/C.png");
+.card-back {
     transform: rotateY(180deg);
+    background-size: 100px 100px;
 }
 
-.cards-flipped.ID4 { 
-    background-image: url("./images/D.png");
-    transform: rotateY(180deg);
+.card-back.ID1 {
+    background-image: url("./images/flame.png");
 }
 
-.cards-flipped.ID5 { 
-    background-image: url("./images/E.png");
-    transform: rotateY(180deg);
+.card-back.ID2 { 
+    background-image: url("./images/lavender.svg");
 }
 
-.cards-flipped.ID6 { 
-    background-image: url("./images/F.png");
-    transform: rotateY(180deg);
+.card-back.ID3 { 
+    background-image: url("./images/lily.png");
 }
 
-.cards-flipped.ID7 { 
-    background-image: url("./images/G.png");
-    transform: rotateY(180deg);
+.card-back.ID4 { 
+    background-image: url("./images/motorbike.png");
 }
 
-.cards-flipped.ID8 { 
-    background-image: url("./images/H.png");
-    transform: rotateY(180deg);
+.card-back.ID5 { 
+    background-image: url("./images/plumeria.png");
+}
+
+.card-back.ID6 { 
+    background-image: url("./images/rose.png");
+}
+
+.card-back.ID7 { 
+    background-image: url("./images/rosemary.png");
+}
+
+.card-back.ID8 { 
+    background-image: url("./images/skull.svg");
 } 
 
 

@@ -23,7 +23,8 @@ class Cards extends Component {
             onClick={() => {this.cardFlipOnClick()}} 
             className={"cards" + " " + this.props.matchId + " " + "selectAllCards"}
             data-matchid = {this.props.matchId}>
-                {this.props.matchId}
+                <div className="card-front"></div>
+                <div className={`card-back ${this.props.matchId}`}></div>
         </div>);
     }
 
