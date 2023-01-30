@@ -7,6 +7,10 @@
     }
 } 
 
+body {
+    background-color: #1a1919;
+}
+
 #gameBoard {
     background-color: #1a1919;
     height: 100%;
