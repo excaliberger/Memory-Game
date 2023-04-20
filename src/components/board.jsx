@@ -60,7 +60,6 @@ class Board extends Component {
                 this.state.firstUniqueId = "";
                 this.state.lastUniqueId = "";
             } else {
-                console.log("else")
                 let firstCard = document.getElementById(this.state.firstUniqueId)
                 let secondCard = document.getElementById(this.state.lastUniqueId)
                 function cardAutoFlip(card1, card2) {
@@ -120,7 +119,6 @@ class Board extends Component {
             <Cards index={index+12} matchId={`${this.state.shuffledBoard[q++]}`} foundMatch={(id, uniqueId) => {this.foundMatch(id, uniqueId)}}/>
             </div>      
         });
-        console.log("finalScore", this.state.score);
         return <>
             <div>
                 <HeaderBox currentScore={this.state.score} bestScore={this.state.bestScore}/>

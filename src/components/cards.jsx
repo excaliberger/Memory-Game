@@ -11,9 +11,11 @@ class Cards extends Component {
         let card = document.getElementById(this.props.index);
         if (!card.className.includes("flipped")) { 
             this.setState({className: "cards-flipped"});
-            card.className = "cards-flipped" + " " + this.props.matchId + " " + "selectAllCards"
+            card.className = "cards-flipped" + " " + this.props.matchId
             this.props.foundMatch(this.props.matchId, this.props.index);
-        } else {
+        } else if (card.className.includes("flipped")) {
+            this.setState({className: "cards"});
+            card.className = "cards" + " " + this.props.matchId
         };
     }
 
